@@ -17,7 +17,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3">
-          <button class="botao btn btn-primary">plot temp</button>
+          <button class="botao btn btn-primary" onclick="func_plot_temp()">plot temp</button>
           <button class="botao btn btn-primary">plot batim</button>
           <button class="botao btn btn-primary">plot oxig</button>
           <button class="botao btn btn-primary">Salca T/B/O</button>
@@ -25,11 +25,18 @@
           <button onclick="func_fechar()" class="botao btn btn-primary">fechar</button>
           <button class="botao btn btn-primary">plot batim</button>
         </div>
+
+        <div class="col-sm-9">
+          <canvas id="plot1" width="800" height="300"></canvas>
+          <canvas id="plot2" width="800" height="300"></canvas>
+          <canvas id="plot3" width="800" height="300"></canvas>
+        </div>
       </div>
       <footer>Criado por Hugo e Mikael</footer>
 
     </div>
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <!--<script src="./renderer.js"></script>-->
+    <script src="chart.min.js"></script>
   </body>
 </html>
