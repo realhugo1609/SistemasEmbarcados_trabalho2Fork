@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>Hello World!!!!!!!!!!!!!!!!</title>
-    <style>
-        table { border-collapse: collapse; }
-        table, th, td { border: 1px solid black; }
-    </style>
-</head>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!--<link href="./styles.css" rel="stylesheet">-->
+    <link href="estilos.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="funcoes.js"></script>
+    <title>Embarcados 1</title>
+  </head>
+  <body>
+    <h1>Sistema de aquisição de dados</h1>
+    <p class="text-primary">Sistema para leitura de dados de temperatura, batimentos cardíacos e nível de oxigêniono sangue!</p>
 
-<body>
-    <h1>Hello World!</h1>
+    <header>Embarcados 1</header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3">
+          <button class="botao btn btn-primary">plot temp</button>
+          <button class="botao btn btn-primary">plot batim</button>
+          <button class="botao btn btn-primary">plot oxig</button>
+          <button class="botao btn btn-primary">Salca T/B/O</button>
+          <button  onclick="func_ajuda()" class="botao btn btn-primary">ajuda</button>
+          <button onclick="func_fechar()" class="botao btn btn-primary">fechar</button>
+          <button class="botao btn btn-primary">plot batim</button>
+        </div>
+      </div>
+      <footer>Criado por Hugo e Mikael</footer>
 
-    We are using Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, Electron <span id="electron-version"></span>, and Serialport <span id="serialport-version"></span>
-
-    <div id="error"></div>
-    <div id="ports"></div>
-
-    <canvas id="acquisitions"></canvas>
-    
-    <script src="./media/renderer.js"></script>
-    <script type="module" src="./media/mainChart.js"></script>
-    
-</body>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
 </html>

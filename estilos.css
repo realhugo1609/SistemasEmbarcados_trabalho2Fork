@@ -1,0 +1,17 @@
+.botao
+{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+header, footer
+{
+    background-color: rgb(99, 60, 60);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+div
+{
+    background-color: rgb(180, 187, 107);
+}
