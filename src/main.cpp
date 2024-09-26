@@ -9,6 +9,8 @@
 #include "FS.h"
 #include "SPIFFS.h"
 
+
+
 #define led 2
 
 const char* ssid = "iPhone de Mikael";  // Enter your SSID here
