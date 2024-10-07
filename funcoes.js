@@ -5,10 +5,11 @@ function func_ajuda() {
     alert("Essa é uma janela de ajuda");
 }
 
-
 function func_plot_temp() 
 {
-    const dados_temp =
+    var quantidade_de_labels = 10;
+
+    var dados_temp =
     {
         type: 'line',
         data:
@@ -24,6 +25,22 @@ function func_plot_temp()
                 ]
         }
     };
-    const grafico_temp = new Chart(document.getElementById('plot1'), dados_temp);
-    grafico_temp.update();
+    var grafico_temp = new Chart(document.getElementById('plot1'), dados_temp);
+    setInterval(function () {
+
+        if (dados_temp.data.labels.length >= 20)
+        {
+            dados_temp.data.labels.shift(); //apaga o primeiro.... mantem apenas 20 temperaturas
+            dados_temp.data.datasets[0].data.shift(); //apaga o primeiro... mantem apenas 20 temperaturas
+        }
+
+
+        dados_temp.data.labels.push(quantidade_de_labels++);
+        dados_temp.data.datasets[0].data.push(Math.random()*100);
+        grafico_temp.update();
+
+    }, 1000);
+
+
+
 }
