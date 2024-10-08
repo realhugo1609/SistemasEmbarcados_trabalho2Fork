@@ -5,42 +5,49 @@ function func_ajuda() {
     alert("Essa é uma janela de ajuda");
 }
 
+var quantidade_de_labels_temp = 0;
+var grafico_temp;
+var dados_temp;
+
 function func_plot_temp() 
 {
-    var quantidade_de_labels = 10;
-
-    var dados_temp =
+    if(flag_plot_temp==0) //cria o grafico pela primeira vez
     {
-        type: 'line',
-        data:
+        flag_plot_temp=1;
+console.log("TESTEEEEEEE");
+        dados_temp =
         {
-            labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-            datasets:
-                [
-                    {
-                        label: 'Dados de Temperatura',
-                        borderColor: 'rgba(0,0,255,0.8)',
-                        data: [45, 34, 78, 23, 89, 54, 32, 78, 12, 72]
-                    }
-                ]
-        }
-    };
-    var grafico_temp = new Chart(document.getElementById('plot1'), dados_temp);
-    setInterval(function () {
+            type: 'line',
+            data:
+            {
+                labels: [0, 1],
+                datasets:
+                    [
+                        {
+                            label: 'Dados de Temperatura',
+                            borderColor: 'rgba(0,0,255,0.8)',
+                            data: [10, 15]
+                        }
+                    ]
+            }
+        };
+        grafico_temp = new Chart(document.getElementById('plot1'), dados_temp);
 
-        if (dados_temp.data.labels.length >= 20)
-        {
-            dados_temp.data.labels.shift(); //apaga o primeiro.... mantem apenas 20 temperaturas
-            dados_temp.data.datasets[0].data.shift(); //apaga o primeiro... mantem apenas 20 temperaturas
-        }
+    }
 
-
-        dados_temp.data.labels.push(quantidade_de_labels++);
-        dados_temp.data.datasets[0].data.push(Math.random()*100);
-        grafico_temp.update();
-
-    }, 1000);
+}
 
 
 
+
+function func_plot_temp2(x_label, meu_dado_recebido) 
+{
+    if (dados_temp.data.labels.length >= 20)
+    {
+        dados_temp.data.labels.shift(); //apaga o primeiro.... mantem apenas 20 temperaturas
+        dados_temp.data.datasets[0].data.shift(); //apaga o primeiro... mantem apenas 20 temperaturas
+    }
+    dados_temp.data.labels.push(x_label);
+    dados_temp.data.datasets[0].data.push(meu_dado_recebido);
+    grafico_temp.update();
 }
