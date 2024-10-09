@@ -3,7 +3,7 @@ var flag_plot_temp=0;
 var flag_salva_temp=0;
 var x_temp = 0;
 const { SerialPort, ReadlineParser }= require('serialport')
-const port = new SerialPort({path:'COM7',baudRate: 19200})
+const port = new SerialPort({path:'COM5',baudRate: 19200})
 const parser = port.pipe(new ReadlineParser())
 parser.on('data', (line) =>
 {
@@ -14,7 +14,7 @@ parser.on('data', (line) =>
     if(flag_plot_temp==1)
     {
 
-        func_plot_temp2(x_temp,dado_recebido[1]);
+        func_plot_temp2(x_temp,dado_recebido[0]);
         x_temp++;
     }
 
@@ -22,4 +22,5 @@ parser.on('data', (line) =>
     {
         fs.appendFileSync("temperatura.txt",dado_recebido[1]+'\n');
     }
+
 });

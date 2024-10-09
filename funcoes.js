@@ -14,19 +14,19 @@ function func_plot_temp()
     if(flag_plot_temp==0) //cria o grafico pela primeira vez
     {
         flag_plot_temp=1;
-console.log("TESTEEEEEEE");
+        console.log("TESTEEEEEEE");
         dados_temp =
         {
             type: 'line',
             data:
             {
-                labels: [0, 1],
+                labels: [],
                 datasets:
                     [
                         {
                             label: 'Dados de Temperatura',
                             borderColor: 'rgba(0,0,255,0.8)',
-                            data: [10, 15]
+                            data: []
                         }
                     ]
             }
@@ -42,7 +42,7 @@ console.log("TESTEEEEEEE");
 
 function func_plot_temp2(x_label, meu_dado_recebido) 
 {
-    if (dados_temp.data.labels.length >= 20)
+    if (dados_temp.data.labels.length >= 100)
     {
         dados_temp.data.labels.shift(); //apaga o primeiro.... mantem apenas 20 temperaturas
         dados_temp.data.datasets[0].data.shift(); //apaga o primeiro... mantem apenas 20 temperaturas
