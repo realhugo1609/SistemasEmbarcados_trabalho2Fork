@@ -2,7 +2,8 @@ function func_fechar() {
     window.close();
 }
 function func_ajuda() {
-    alert("Essa é uma janela de ajuda");
+    alert("Esta é uma janela de Ajuda, Clique no botão para realizar o seu plot!\nCertifique-se que o microcontrolador está a porta COM8");
+
 }
 
 var quantidade_de_labels_temp = 0;
@@ -27,6 +28,7 @@ function func_plot_temp()
                 datasets:
                     [
                         {
+                            tension: 0.1,
                             label: 'Dados de Temperatura',
                             borderColor: 'rgba(0,0,255,0.8)',
                             data: []
@@ -53,6 +55,7 @@ function func_plot_batim()
                 datasets:
                     [
                         {
+                            tension: 0.1,
                             label: 'Dados de Batimentos',
                             borderColor: 'rgba(0,0,255,0.8)',
                             data: []
@@ -77,6 +80,7 @@ function func_plot_oxig()
                 datasets:
                     [
                         {
+                            tension: 0.1,
                             label: 'Dados de Oxigenação',
                             borderColor: 'rgba(0,0,255,0.8)',
                             data: []
