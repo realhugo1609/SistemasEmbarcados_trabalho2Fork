@@ -30,7 +30,7 @@ div {
 }
 canvas {
   border: rgb(49, 59, 68) groove 1px;
-  border-radius: 5px;
+  border-radius: 10px;
 
   background-color: rgb(207, 219, 250);
 }
