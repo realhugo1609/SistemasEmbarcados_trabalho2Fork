@@ -7,7 +7,7 @@ var x_temp = 0;
 var x_batim = 0;
 var x_oxig = 0;
 const { SerialPort, ReadlineParser }= require('serialport')
-const port = new SerialPort({path:'COM7',baudRate: 115200})
+const port = new SerialPort({path:'COM8',baudRate: 115200})
 const parser = port.pipe(new ReadlineParser())
 parser.on('data', (line) =>
 {
@@ -17,7 +17,6 @@ parser.on('data', (line) =>
 
     if(flag_plot_temp==1)
     {
-
         func_plot_temp2(x_temp,dado_recebido[0]);
         x_temp++;
     }

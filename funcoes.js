@@ -2,7 +2,8 @@ function func_fechar() {
     window.close();
 }
 function func_ajuda() {
-    alert("Essa é uma janela de ajuda");
+    alert("Esta é uma janela de Ajuda, Clique no botão para realizar o seu plot!\nCertifique-se que o microcontrolador está a porta COM7");
+
 }
 
 var quantidade_de_labels_temp = 0;
